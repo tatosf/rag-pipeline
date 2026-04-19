@@ -22,7 +22,7 @@ class Settings:
     confidence_boost: float = 0.1
     top_k: int = 5
     candidate_k: int = 20
-    min_evidence_score: float = 0.35
+    min_evidence_score: float = 0.02
     enable_verify: bool = True
     max_upload_mb: int = 20
 

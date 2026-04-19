@@ -2,8 +2,7 @@ import json
 from typing import Any
 
 import numpy as np
-from mistralai import Mistral
-
+from mistralai.client import Mistral
 from app.config import settings
 
 _client = Mistral(api_key=settings.mistral_api_key)

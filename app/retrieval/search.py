@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 from app.config import settings
 from app.llm import embed_one
-from app.retrieval import bm25, vector
+from app.retrieval import bm25, cosine_similarity
 from app.retrieval.fusion import apply_confidence_boost, mmr, reciprocal_rank_fusion
 from app.retrieval.store import get_chunks_by_ids, load_embedding_matrix
 
@@ -23,7 +23,7 @@ def hybrid_search(query: str, top_k: int | None = None) -> tuple[list[RetrievedC
     candidate_k = settings.candidate_k
 
     query_vec = embed_one(query)
-``
+
     bm25_results = bm25.search(query, top_k=candidate_k)
     cosine_results = cosine_similarity.search(query_vec, top_k=candidate_k)
 
