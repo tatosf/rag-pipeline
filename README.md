@@ -88,4 +88,11 @@ data/rag.db               SQLite (gitignored)
 
 ## Libraries
 
-`fastapi`, `uvicorn`, `python-multipart`, `mistralai`, `pypdf`, `numpy`, `python-dotenv`. Stdlib `sqlite3` for storage. Nothing else — no LangChain, LlamaIndex, FAISS, Chroma, or rank_bm25.
+- [`fastapi`](https://fastapi.tiangolo.com/) — HTTP framework (required by spec)
+- [`uvicorn`](https://www.uvicorn.org/) — ASGI server
+- [`python-multipart`](https://github.com/Kludex/python-multipart) — multipart file uploads
+- [`mistralai`](https://github.com/mistralai/client-python) — official Mistral SDK (required)
+- [`pypdf`](https://pypdf.readthedocs.io/) — PDF text extraction
+- [`numpy`](https://numpy.org/) — vector math (cosine similarity, matrix dot product)
+- [`python-dotenv`](https://github.com/theskumar/python-dotenv) — load `MISTRAL_API_KEY` from `.env`
+- [`sqlite3`](https://docs.python.org/3/library/sqlite3.html) — stdlib, embedding and chunk storage
